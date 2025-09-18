@@ -12,7 +12,6 @@ module.exports = {
         authorId: 1, // Стэн Ли
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Боевик',
       },
       {
         title: 'Нелюди',
@@ -22,7 +21,6 @@ module.exports = {
         authorId: 1, // Стэн Ли
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Экшен',
       },
       {
         title: 'Железный человек: Возрождение',
@@ -32,7 +30,6 @@ module.exports = {
         authorId: 1, // Стэн Ли
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Боевик',
       },
 
       // ========== Автор: 2 - Джек Кирби ==========
@@ -44,7 +41,6 @@ module.exports = {
         authorId: 2, // Джек Кирби
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Фантастика',
       },
       {
         title: 'Бог грома: Тор',
@@ -54,7 +50,6 @@ module.exports = {
         authorId: 2, // Джек Кирби
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Фантастика',
       },
       {
         title: 'Фантастические путешествия',
@@ -64,7 +59,6 @@ module.exports = {
         authorId: 2, // Джек Кирби
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Фантастика',
       },
 
       // ========== Автор: 3 - Фрэнк Миллер ==========
@@ -76,7 +70,6 @@ module.exports = {
         authorId: 3, // Фрэнк Миллер
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Криминал',
       },
       {
         title: 'Ронин',
@@ -86,7 +79,6 @@ module.exports = {
         authorId: 3, // Фрэнк Миллер
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'История',
       },
 
       // ========== Автор: 4 - Алан Мур ==========
@@ -98,7 +90,6 @@ module.exports = {
         authorId: 4, // Алан Мур
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Экшен',
       },
 
       // ========== Автор: 5 - Хадзимэ Исаяма ==========
@@ -110,7 +101,6 @@ module.exports = {
         authorId: 5, // Хадзимэ Исаяма
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Боевик',
       },
       {
         title: 'Атака титанов. Том 2',
@@ -120,7 +110,6 @@ module.exports = {
         authorId: 5, // Хадзимэ Исаяма
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Боевик',
       },
 
       // ========== Автор: 6 - Наоко Такэути ==========
@@ -132,7 +121,6 @@ module.exports = {
         authorId: 6, // Наоко Такэути
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Романтика',
       },
 
       // ========== Автор: 7 - Эйитиро Ода ==========
@@ -144,7 +132,6 @@ module.exports = {
         authorId: 7, // Эйитиро Ода
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Экшен',
       },
       {
         title: 'Ван-Пис. Том 2',
@@ -154,7 +141,6 @@ module.exports = {
         authorId: 7, // Эйитиро Ода
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Экшен',
       },
 
       // ========== Автор: 8 - Артём Габрелянов (Bubble) ==========
@@ -166,7 +152,6 @@ module.exports = {
         authorId: 8, // Артём Габрелянов
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Детектив',
       },
       {
         title: 'Майор Гром: Дождь патриотов',
@@ -176,7 +161,6 @@ module.exports = {
         authorId: 8, // Артём Габрелянов
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Детектив',
       },
 
       // ========== Автор: 9 - Роман Котков (Bubble) ==========
@@ -188,7 +172,6 @@ module.exports = {
         authorId: 9, // Роман Котков
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Приключения',
       },
       {
         title: 'Экслибриум: Лабиринт отражений',
@@ -198,7 +181,6 @@ module.exports = {
         authorId: 9, // Роман Котков
         createdAt: new Date(),
         updatedAt: new Date(),
-        style: 'Приключения',
       },
 
     ], {});

@@ -1,9 +1,10 @@
 import MainPage from './pages/MainPage';
-import Header from './ui/Header';
+import Navbar from './ui/navbar/Navbar';
 
 const components = {
   MainPage,
-  Header,
+  Navbar,
+
 };
 
 export default components;

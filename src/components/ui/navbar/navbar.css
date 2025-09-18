@@ -1,0 +1,13 @@
+.mainContainer {
+  width: 100vw;  
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.linkContainer {
+  width: 30vw;
+  display: flex;
+  justify-content: space-evenly;
+}
