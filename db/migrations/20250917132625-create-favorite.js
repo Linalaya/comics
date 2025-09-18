@@ -1,0 +1,38 @@
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('Favorites', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER,
+      },
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: { tableName: 'Users' }, key: 'id' }, // можно писать так
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      },
+      bookId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Books', key: 'id' }, // а можно и так
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+    });
+  },
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('Favorites');
+  },
+};
