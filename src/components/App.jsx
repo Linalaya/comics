@@ -5,8 +5,7 @@ export default function App({ children }) {
   return (
     <>
       <Navbar />
-
-      <div>{children}</div>
+      {children}
     </>
   );
 }

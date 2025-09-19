@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsTo(models.User, { foreignKey: 'userId' });
       this.belongsToMany(models.Book, { through: models.OrderBooks, foreignKey: 'orderId' });
-      this.hasMany(models.OrderBooks, { foreignKey: 'orderId' });
     }
   }
   Order.init({

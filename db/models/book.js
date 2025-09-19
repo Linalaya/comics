@@ -13,15 +13,12 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Author, { foreignKey: 'authorId' });
       this.belongsToMany(models.User, { through: models.Favorite, foreignKey: 'bookId' });
       this.belongsToMany(models.Order, { through: models.OrderBooks, foreignKey: 'bookId' });
-      this.hasMany(models.Favorite, { foreignKey: 'bookId' });
-      this.hasMany(models.OrderBooks, { foreignKey: 'bookId' });
       this.hasMany(models.Style, { foreignKey: 'bookId' });
     }
   }
   Book.init({
     title: DataTypes.STRING,
     description: DataTypes.STRING,
-    style: DataTypes.STRING,
     price: DataTypes.DECIMAL(10, 2),
     imgUrl: DataTypes.STRING,
     authorId: DataTypes.INTEGER,
