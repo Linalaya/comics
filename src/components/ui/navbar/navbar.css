@@ -10,7 +10,7 @@
   background-color: rgb(234, 255, 254);
 }
 .linkContainer {
-  width: 30vw;
+  width: 50vw;
   display: flex;
   justify-content: space-evenly;
 }

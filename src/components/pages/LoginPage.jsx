@@ -1,8 +1,19 @@
 import React from 'react';
+import axios from 'axios';
 
 export default function LoginPage() {
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/api/v1/auth/login', Object.fromEntries(new FormData(e.target)));
+      if (response.status === 200) window.location.href = '/';
+    } catch (error) {
+      alert(error.response.data.message);
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="mb-3">
         <label className="form-label">
           Адрес электронной почты
@@ -15,7 +26,7 @@ export default function LoginPage() {
           <input name="password" type="password" className="form-control" />
         </label>
       </div>
-      <button type="submit" className="btn btn-success">Отправить</button>
+      <button type="submit" className="btn btn-success">Войти</button>
     </form>
   );
 }

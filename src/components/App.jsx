@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from './ui/navbar/Navbar';
 
-export default function App({ children }) {
+export default function App({ children, user }) {
   return (
     <>
-      <Navbar />
+      <Navbar user={user} />
       {children}
     </>
   );
