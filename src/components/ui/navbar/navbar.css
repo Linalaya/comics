@@ -8,9 +8,11 @@
   z-index: 1;
   top:0;
   background-color: rgb(234, 255, 254);
+  margin-bottom: 30px;
 }
 .linkContainer {
   width: 50vw;
   display: flex;
   justify-content: space-evenly;
+  text-align: center;
 }

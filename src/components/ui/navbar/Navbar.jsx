@@ -19,9 +19,7 @@ export default function Navbar({ user }) {
   return (
     <nav className="navContainer">
       <div className="linkContainer">
-        <p className="text-center">
-          {user && `Привет, ${user.username}!`}
-        </p>
+        {user && `Привет, ${user.username}!`}
         <button className="btn btn-sm btn-outline-secondary" type="button" onClick={navigationHandler('/')}>Главная</button>
         {!user ? (
           <>
@@ -31,9 +29,9 @@ export default function Navbar({ user }) {
         )
           : (
             <>
-              <button className="btn btn-sm btn-outline-secondary" type="button" onClick={navigationHandler('/user/favorites')}>Избранное</button>
-              <button className="btn btn-sm btn-outline-secondary" type="button" onClick={navigationHandler('/user/list')}>Корзина</button>
-              <button className="btn btn-sm btn-outline-secondary" type="button" onClick={navigationHandler('/user/orders')}>Заказы</button>
+              <button className="btn btn-sm btn-outline-secondary" type="button" onClick={navigationHandler('/favorites')}>Избранное</button>
+              <button className="btn btn-sm btn-outline-secondary" type="button" onClick={navigationHandler('/cart')}>Корзина</button>
+              <button className="btn btn-sm btn-outline-secondary" type="button" onClick={navigationHandler('/orders')}>Заказы</button>
               <button className="btn btn-sm btn-outline-secondary" type="button" onClick={logoutHandler}>Выйти</button>
             </>
           )}

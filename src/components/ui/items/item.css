@@ -1,0 +1,29 @@
+.itemCartContainer {
+  display: grid;
+  align-self: center;
+  grid-template-columns: 60px 1fr 100px 80px; /* картинка | название | инпут | цена */
+  align-items: center;
+  gap: 20px;
+  width: 60vw;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.itemOrderContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5px;
+  justify-items: center;
+  align-items: center;
+}
+
+.imgContainer {
+  display: flex;
+  flex-direction: row;
+  width: 20vw;
+  align-self: center;
+  grid-template-columns: 60px 100px ;
+  gap:10px;
+
+}

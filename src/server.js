@@ -6,11 +6,15 @@ import 'dotenv/config';
 import cookieParser from 'cookie-parser';
 import indexRouter from './routes/indexRouter';
 import authRouter from './routes/authRouter';
-import userRouter from './routes/userRouter';
-import resLocals from './middleware/resLocals';
-import chekAuthorization from './middleware/chekAuthorization';
+import favoriteRouter from './routes/favoriteRouter';
+import cartRouter from './routes/cartRouter';
 import apiAuthRouter from './routes/apiAuthRouter';
 import apiFavoriteRouter from './routes/apiFavoriteRouter';
+import apiCartRouter from './routes/apiCartRouter';
+import apiOrderRouter from './routes/apiOrderRouter';
+import orderRouter from './routes/orderRouter';
+import resLocals from './middleware/resLocals';
+import chekAuthorization from './middleware/chekAuthorization';
 
 const app = express();
 app.engine('jsx', jsxRender);
@@ -27,9 +31,13 @@ app.use(resLocals);
 
 app.use('/', indexRouter);
 app.use('/auth', chekAuthorization, authRouter);
+app.use('/favorites', favoriteRouter);
+app.use('/cart', cartRouter);
+app.use('/orders', orderRouter);
 app.use('/api/v1/auth', apiAuthRouter);
 app.use('/api/v1/favorites', apiFavoriteRouter);
-app.use('/user', userRouter);
+app.use('/api/v1/cart', apiCartRouter);
+app.use('/api/v1/orders', apiOrderRouter);
 
 app.listen(process.env.PORT, () => {
   console.log('Server start on', process.env.PORT);

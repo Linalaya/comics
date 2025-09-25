@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 
-export default function Card({ book, isFavorite }) {
+export default function Card({ book, isFavorite, setFavoritesList }) {
   const [favorite, setFavorite] = useState(isFavorite);
 
   const addHandler = async () => {
@@ -16,7 +16,23 @@ export default function Card({ book, isFavorite }) {
   const removeHandler = async () => {
     try {
       const response = await axios.delete(`/api/v1/favorites/${book.id}`);
-      if (response.status === 200) setFavorite(false);
+      if (response.status === 200) {
+        setFavorite(false);
+        if (setFavoritesList) setFavoritesList((prev) => prev.filter((el) => el.id !== book.id));
+      }
+    } catch (error) {
+      console.log(error);
+
+      alert(error.response.data.message);
+    }
+  };
+
+  const handleInCart = async () => {
+    try {
+      const response = await axios.post(`/api/v1/cart/${book.id}`);
+      if (response.status === 200) {
+        alert('Книга добавлена в корзину');
+      }
     } catch (error) {
       alert(error.response.data.message);
     }
@@ -49,9 +65,14 @@ export default function Card({ book, isFavorite }) {
             />
           </button>
         )}
-
-        <br />
-        <a href="#" className="link-secondary text-decoration-none">в корзину</a>
+        <button onClick={handleInCart} type="button">
+          <img
+            src="/icons/cart.png"
+            alt="cart"
+            width={20}
+            height={20}
+          />
+        </button>
       </div>
     </div>
   );

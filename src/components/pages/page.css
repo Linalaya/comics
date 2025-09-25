@@ -1,18 +1,34 @@
 .mainContainer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  gap:20px;
   height: 100%;
   width: 100%;
 }
-.sideBar {
-  width: 30%;
-  background-color: rgb(233, 251, 250);
+.sideBar {  
+  width: 20%;
 }
 .bookContent {
   display: flex;
+  width: 80%;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   gap:20px;
   flex-wrap: wrap;
-  background-color: rgb(219, 254, 252);
+}
+.cartContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.hContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }

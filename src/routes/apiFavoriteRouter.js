@@ -1,5 +1,5 @@
 import express from 'express';
-import { Favorite } from '../../db/models';
+import { Favorite, User } from '../../db/models';
 
 const apiFavoriteRouter = express.Router();
 
@@ -23,5 +23,13 @@ apiFavoriteRouter.delete('/:bookId', async (req, res) => {
   await favorite.destroy();
   return res.sendStatus(200);
 });
+
+// apiFavoriteRouter.get('/', async (req, res) => {
+//   if (!res.locals.user) return res.status(401).json({ message: 'Нужно войти в аккаунт' });
+//   const userId = res.locals.user.id;
+//   const user = await User.findByPk(userId);
+//   const favorites = await user.getBooks();
+//   return res.sendStatus(200).json({ favorites });
+// });
 
 export default apiFavoriteRouter;

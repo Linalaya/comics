@@ -5,7 +5,6 @@ const indexRouter = express.Router();
 
 indexRouter.get('/', async (req, res) => {
   const comics = await Book.findAll();
-
   if (res.locals.user) {
     const favorites = await Favorite.findAll({
       where: { userId: res.locals.user.id },
