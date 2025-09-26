@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '../ui/card/Card';
 import './page.css';
 
-export default function MainPage({ comics, favorites }) {
+export default function MainPage({ comics, favorites, arrayItemCart }) {
   return (
     <div className="mainContainer">
       <div className="sideBar">
@@ -14,6 +14,7 @@ export default function MainPage({ comics, favorites }) {
             key={book.id}
             book={book}
             isFavorite={favorites.includes(book.id)}
+            inCart={arrayItemCart.includes(book.id)}
           />
         ))}
       </div>

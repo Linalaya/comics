@@ -29,4 +29,15 @@ apiCartRouter.patch('/', async (req, res) => {
   return res.sendStatus(200);
 });
 
+apiCartRouter.delete('/:itemId', async (req, res) => {
+  if (!res.locals.user) return res.status(401).json({ message: 'Нужно войти в аккаунт' });
+  const bookId = req.params.itemId;
+  const cart = await Cart.findOne({ where: { userId: res.locals.user.id } });
+  if (!cart) {
+    return res.status(404).json({ message: 'Корзина не найдена' });
+  }
+  await CartBooks.destroy({ where: { cartId: cart.id, bookId } });
+  return res.sendStatus(200);
+});
+
 export default apiCartRouter;

@@ -27,6 +27,7 @@ export default function ItemOrder({ item }) {
             height={100}
             src={book.imgUrl}
             alt={book.title}
+            key={book.id}
           />
         ))}
       </div>

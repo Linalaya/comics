@@ -1,10 +1,10 @@
 .itemCartContainer {
   display: grid;
   align-self: center;
-  grid-template-columns: 60px 1fr 100px 80px; /* картинка | название | инпут | цена */
+  grid-template-columns: 50px 1fr 80px 75px 80px; /* картинка | название | инпут | цена | кнопка */
   align-items: center;
   gap: 20px;
-  width: 60vw;
+  width: 55vw;
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }

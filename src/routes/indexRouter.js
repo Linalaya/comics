@@ -1,5 +1,5 @@
 import express from 'express';
-import { Book, Favorite } from '../../db/models';
+import { Book, Favorite, Cart } from '../../db/models';
 
 const indexRouter = express.Router();
 
@@ -10,9 +10,18 @@ indexRouter.get('/', async (req, res) => {
       where: { userId: res.locals.user.id },
       attributes: ['bookId'],
     });
-    return res.render('MainPage', { comics, favorites: favorites.map(((fav) => fav.bookId)) });
+    const cart = await Cart.findOne({
+      where: { userId: res.locals.user.id },
+      include: [
+        {
+          model: Book,
+          through: { attributes: ['bookId'] },
+        },
+      ],
+    });
+    return res.render('MainPage', { comics, favorites: favorites.map(((fav) => fav.bookId)), arrayItemCart: cart.Books.map((book) => book.id) });
   }
-  return res.render('MainPage', { comics, favorites: [] });
+  return res.render('MainPage', { comics, favorites: [], arrayItemCart: [] });
 });
 
 export default indexRouter;

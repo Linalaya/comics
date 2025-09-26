@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ItemCart from '../ui/items/ItemCart';
 import './page.css';
 import axios from 'axios';
 
 export default function CartPage({ cart }) {
+  const [listCart, setListCart] = useState(cart);
+
   const orderHandler = async () => {
     try {
       const response = await axios.post('/api/v1/orders');
@@ -17,10 +19,10 @@ export default function CartPage({ cart }) {
   };
   return (
     <div className="cartContainer">
-      {cart.Books.length > 0 ? (
+      {listCart && listCart.Books.length > 0 ? (
         <>
-          {cart.Books.map((book) => (
-            <ItemCart item={book} key={book.id} />
+          {listCart.Books.map((book) => (
+            <ItemCart item={book} key={book.id} setListCart={setListCart} />
           ))}
           <button
             type="button"
