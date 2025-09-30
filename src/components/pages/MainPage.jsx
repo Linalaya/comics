@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '../ui/card/Card';
+import Sidebar from '../ui/sidebar/Sidebar';
 import './page.css';
 
-export default function MainPage({ comics, favorites, arrayItemCart }) {
+export default function MainPage({
+  comics, favorites, arrayItemCart, styles,
+}) {
+  const [books, setBooks] = useState(comics);
+
   return (
     <div className="mainContainer">
-      <div className="sideBar">
-        sideBar
-      </div>
+      <Sidebar setBooks={setBooks} comics={comics} styles={styles} />
       <div className="bookContent">
-        {comics.map((book) => (
+        {books?.map((book) => (
           <Card
             key={book.id}
             book={book}

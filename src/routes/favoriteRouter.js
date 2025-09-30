@@ -1,13 +1,18 @@
 import express from 'express';
-import { User } from '../../db/models';
+import {
+  User, Book, Author,
+} from '../../db/models';
 
 const favoriteRouter = express.Router();
 
 favoriteRouter.get('/', async (req, res) => {
-  const user = await User.findByPk(res.locals.user.id);
-  const favoritesComics = await user.getBooks(); // методы getBooks, addBook вызываются на
-  // экземпляре и выглядят так: [глагол] + [связанная модель во множественном числе]
-  res.render('FavoritesPage', { favoritesComics });
+  const userWithBooks = await User.findByPk(res.locals.user.id, {
+    include: {
+      model: Book,
+      include: [Author],
+    },
+  });
+  res.render('FavoritesPage', { favoritesComics: userWithBooks.Books });
 });
 
 export default favoriteRouter;

@@ -7,6 +7,8 @@ export default function Card({
   const [favorite, setFavorite] = useState(isFavorite);
   const [isInCart, setIsInCart] = useState(inCart);
 
+  console.log(book);
+
   const addFavoriteHandler = async () => {
     try {
       const response = await axios.post(`/api/v1/favorites/${book.id}`);
@@ -53,11 +55,18 @@ export default function Card({
   };
 
   return (
-    <div className="card" style={{ width: '12rem' }}>
+    <div className="card" style={{ width: '12rem', height: '43rem' }}>
       <img src={book.imgUrl} className="card-img-top" width={100} height={250} alt={book.title} />
       <div className="card-body">
+        <p className="card-text">{book.Author.organization}</p>
         <h5 className="card-title">{book.title}</h5>
+        <h6 className="card-text">{`Автор: ${book.Author.name}`}</h6>
         <p className="card-text">{book.description}</p>
+        <h5 className="card-text">
+          {book.price}
+          {' '}
+          ₽
+        </h5>
       </div>
       <div className="card-body">
         {favorite ? (

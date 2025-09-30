@@ -13,20 +13,22 @@ export default function LoginPage() {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div className="mb-3">
-        <label className="form-label">
-          Адрес электронной почты
-          <input name="email" type="email" className="form-control" />
-        </label>
-      </div>
-      <div className="mb-3">
-        <label className="form-label">
-          Пароль
-          <input name="password" type="password" className="form-control" />
-        </label>
-      </div>
-      <button type="submit" className="btn btn-success">Войти</button>
-    </form>
+    <div className="formContainer">
+      <form onSubmit={submitHandler}>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="username-login">
+            Адрес электронной почты
+            <input name="email" type="email" className="form-control" id="username-login" />
+          </label>
+        </div>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="password-login">
+            Пароль
+            <input name="password" type="password" className="form-control" id="password-login" />
+          </label>
+        </div>
+        <button type="submit" className="btn btn-success">Войти</button>
+      </form>
+    </div>
   );
 }

@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsToMany(models.User, { through: models.Favorite, foreignKey: 'bookId' });
       this.belongsToMany(models.Order, { through: models.OrderBooks, foreignKey: 'bookId' });
       this.belongsToMany(models.Cart, { through: models.CartBooks, foreignKey: 'bookId' });
-      this.hasMany(models.Style, { foreignKey: 'bookId' });
+      this.belongsTo(models.Style, { foreignKey: 'styleId' });
     }
   }
   Book.init({
@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.DECIMAL(10, 2),
     imgUrl: DataTypes.STRING,
     authorId: DataTypes.INTEGER,
+    styleId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Book',

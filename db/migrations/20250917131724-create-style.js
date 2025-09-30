@@ -11,13 +11,6 @@ module.exports = {
       style: {
         type: Sequelize.STRING,
       },
-      bookId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model: 'Books', key: 'id' },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

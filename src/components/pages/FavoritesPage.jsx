@@ -9,10 +9,7 @@ export default function FavoritesPage({ favoritesComics }) {
 
   return (
     <div className="mainContainer">
-      <div className="sideBar">
-        sideBar
-      </div>
-      <div className="bookContent">
+      <div className="favoriteContainer">
         {favorites.length > 0
           ? favorites.map((book) => (
             <Card
