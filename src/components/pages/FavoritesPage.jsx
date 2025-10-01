@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card from '../ui/card/Card';
 import './page.css';
 
-export default function FavoritesPage({ favoritesComics }) {
+export default function FavoritesPage({ favoritesComics, arrayItemCart }) {
   const [favorites, setFavoritesList] = useState(favoritesComics);
 
   const trueValue = true;
@@ -17,6 +17,7 @@ export default function FavoritesPage({ favoritesComics }) {
               book={book}
               isFavorite={trueValue}
               setFavoritesList={setFavoritesList}
+              inCart={arrayItemCart.includes(book.id)}
             />
           )) : <div className="hContainer"><h2>В избранном нет комиксов</h2></div>}
       </div>

@@ -86,10 +86,10 @@ export default function Sidebar({ setBooks, comics, styles }) {
         <p>Автор</p>
         <div>
           {uniqueAuthors?.map((author) => (
-            <div className="form-check" key={author.id}>
-              <label className="form-check-label" htmlFor="check">
+            <div className="form-check" key={author.id} onChange={checkboxAuthorsHandler}>
+              <label className="form-check-label" htmlFor={`check${author.id}`}>
                 {author.name}
-                <input className="form-check-input" type="checkbox" name={author.id} onChange={checkboxAuthorsHandler} id="check" />
+                <input className="form-check-input" type="checkbox" name={author.id} id={`check${author.id}`} />
               </label>
             </div>
           ))}
@@ -99,10 +99,10 @@ export default function Sidebar({ setBooks, comics, styles }) {
         <p>Жанр</p>
         <div>
           {styles?.map((style) => (
-            <div className="form-check" key={style.id}>
-              <label className="form-check-label" htmlFor="check">
+            <div className="form-check" key={style.id} onChange={checkboxStylesHandler}>
+              <label className="form-check-label" htmlFor={`box${style.id}`}>
                 {style.style}
-                <input className="form-check-input" type="checkbox" name={style.id} onChange={checkboxStylesHandler} id="check" />
+                <input className="form-check-input" type="checkbox" name={style.id} id={`box${style.id}`} />
               </label>
             </div>
           ))}

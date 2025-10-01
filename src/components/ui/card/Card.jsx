@@ -1,13 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import './card.css';
 
 export default function Card({
   book, isFavorite, setFavoritesList, inCart,
 }) {
   const [favorite, setFavorite] = useState(isFavorite);
   const [isInCart, setIsInCart] = useState(inCart);
-
-  console.log(book);
 
   const addFavoriteHandler = async () => {
     try {
@@ -68,14 +67,14 @@ export default function Card({
           ₽
         </h5>
       </div>
-      <div className="card-body">
+      <div className="card-body cardButtons">
         {favorite ? (
           <button onClick={removeFavoriteHandler} type="button">
             <img
               src="/icons/favorite.png"
               alt="favorite"
-              width={20}
-              height={20}
+              width={24}
+              height={24}
             />
           </button>
         ) : (
@@ -83,8 +82,8 @@ export default function Card({
             <img
               src="/icons/emptyFavorite.png"
               alt="favorite"
-              width={20}
-              height={20}
+              width={24}
+              height={24}
             />
           </button>
         )}
@@ -93,8 +92,8 @@ export default function Card({
             <img
               src="/icons/deleteCart.png"
               alt="cart"
-              width={20}
-              height={20}
+              width={27}
+              height={27}
             />
           </button>
         ) : (
@@ -102,8 +101,8 @@ export default function Card({
             <img
               src="/icons/cart.png"
               alt="cart"
-              width={20}
-              height={20}
+              width={27}
+              height={27}
             />
           </button>
         )}
